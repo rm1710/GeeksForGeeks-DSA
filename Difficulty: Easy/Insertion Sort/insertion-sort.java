@@ -42,15 +42,15 @@ class Solution
 {
   static void insert(int arr[],int i)
   {
-        int key = arr[i];
-        int j = i - 1;
+        int j = i;
 
         // Shift elements that are greater than key to one position ahead
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
+        while (j > 0 && arr[j - 1] > arr[j]) {
+            int temp = arr[j - 1];
+            arr[j - 1] = arr[j];
+            arr[j] = temp;
             j--;
         }
-        arr[j + 1] = key;
   }
   //Function to sort the array using insertion sort algorithm.
   public void insertionSort(int arr[], int n)

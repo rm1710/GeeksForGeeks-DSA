@@ -67,15 +67,17 @@ System.out.println("~");
 class Solution {
     Node constructDLL(int arr[]) {
         if(arr.length==0) return null;
-        // Code here
-        Node head= new Node(arr[0]);
+        
+        Node head=new Node(arr[0]);
         Node crr=head;
+        
         for(int i=1;i<arr.length;i++){
             Node newNode=new Node(arr[i]);
             crr.next=newNode;
             newNode.prev=crr;
             crr=newNode;
         }
+        
         return head;
     }
 }
